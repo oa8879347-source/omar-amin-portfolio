@@ -9,6 +9,14 @@
     apple: '<svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-.9-2.4-3.9zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>',
     play: '<svg viewBox="0 0 24 24"><path d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1zm11.3 11.3 2.4 2.4-11.1 6.3 8.7-8.7zm3.6-3.6 2.8 1.6c.8.5.8 1.3 0 1.8l-2.8 1.6-2.6-2.5 2.6-2.5zM6.2 2.2l11.1 6.3-2.4 2.4-8.7-8.7z"/></svg>',
     mail: '<svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.5L4 7.3V17h16V7.3l-8 5.2zM5.2 7l6.8 4.4L18.8 7H5.2z"/></svg>',
+    wa: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>',
+    call: '<svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>',
+    li: '<svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg>',
+    dl: '<svg viewBox="0 0 24 24"><path d="M11 3h2v9.2l3.3-3.3 1.4 1.4L12 16l-5.7-5.7 1.4-1.4 3.3 3.3zM4 18h16v2H4z"/></svg>',
+    repo: '<svg viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.5 2.5 0 0 1 2 11.5zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.5 2.5 0 0 1 4.5 9h8z"/></svg>',
+    pin: '<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+    org: '<svg viewBox="0 0 24 24"><path d="M4 21V5l8-3v19M12 9h8v12M7 8h2M7 12h2M7 16h2M15 13h2M15 17h2M2 21h20"/></svg>',
+    link: '<svg viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg>',
   };
   const badges = (a) => `${a.ios ? `<a class="badge" href="${a.ios}" target="_blank" rel="noopener">${ICON.apple}${U().m.ios}</a>` : ""}${a.android ? `<a class="badge" href="${a.android}" target="_blank" rel="noopener">${ICON.play}${U().m.android}</a>` : ""}`;
   const appIcon = (a, cls = "ic") => a.icon ? `<img class="${cls}" src="${a.icon}" alt="${esc(a.name)} icon" loading="lazy">` : `<span class="${cls}">RB</span>`;
@@ -18,11 +26,11 @@
     const u = U();
     root.lang = lang; root.dir = u.dir;
     document.title = lang === "ar" ? "عمر أحمد أمين — مدير تقني ومهندس برمجيات أول" : "Omar Ahmed Amin — CTO & Senior Software Engineer";
-    const ids = ["work", "process", "experience", "skills", "contact"];
+    const ids = ["work", "process", "experience", "profile", "contact"];
     $("#navlinks").innerHTML = u.nav.map((n, i) => `<a href="#${i === 0 ? "live" : ids[i]}">${n}</a>`).join("");
     $("#lang").textContent = u.other;
     $("#cvbtn").textContent = u.cv; $("#cv2").textContent = u.cv;
-    ["eyebrow", "h1", "lead", "based", "liveTitle", "liveSub", "procTitle", "procSub", "workTitle", "workSub", "expTitle", "skillsTitle", "archTitle", "archSub", "contactTitle", "contactSub", "footer"].forEach((k) => { const el = $("#" + k); if (el) el.textContent = u[k]; });
+    ["ghTitle", "ghSub", "eyebrow", "h1", "lead", "based", "liveTitle", "liveSub", "procTitle", "procSub", "workTitle", "workSub", "expTitle", "skillsTitle", "archTitle", "archSub", "contactTitle", "contactSub", "footer"].forEach((k) => { const el = $("#" + k); if (el) el.textContent = u[k]; });
     $("#ctaWork").textContent = u.ctaWork;
     $("#ctaMail").innerHTML = ICON.mail + esc(u.ctaMail); $("#ctaMail").href = `mailto:${PROFILE.email}`;
     $("#mail2").innerHTML = ICON.mail + esc(u.ctaMail); $("#mail2").href = `mailto:${PROFILE.email}`;
@@ -39,8 +47,10 @@
     $("#stats").innerHTML = PROFILE.stats.map((s) => `<div class="stat reveal"><b data-to="${s.value}" data-suf="${s.suffix}">0${s.suffix}</b><span>${esc(s[lang])}</span></div>`).join("");
 
     const apps = liveApps();
-    const pos = [[-6, 8, -8], [84, 2, 10], [92, 38, -6], [-12, 46, 12], [80, 74, 8], [4, 82, -10], [40, -6, 6]];
-    $("#floaters").innerHTML = apps.filter((a) => a.icon).slice(0, 7).map((a, i) => `<img src="${a.icon}" alt="" style="left:${pos[i][0]}%;top:${pos[i][1]}%;--rot:${pos[i][2]}deg;animation-delay:${-i * 0.9}s">`).join("");
+    $("#flock").innerHTML = apps.map((a, i) => `<a href="#project/${a.pid}" style="--d:${-i * 0.7}s" aria-label="${esc(a.name)}"><span class="ico${a.icon ? "" : " rb"}">${a.icon ? `<img src="${a.icon}" alt="">` : "RB"}</span><b>${esc(a.name)}</b></a>`).join("");
+    $("#gatherTitle").textContent = u.gatherTitle; $("#gatherSub").textContent = u.gatherSub;
+    renderCtas(u);
+    renderGh(u);
     const chips = apps.map((a) => `<a href="#project/${a.pid}">${a.icon ? `<img src="${a.icon}" alt="">` : "<i>RB</i>"}${esc(a.name)}</a>`).join("");
     $("#marquee").innerHTML = chips + chips;
 
@@ -69,6 +79,7 @@
     $("#skillgrid").innerHTML = SKILLS.map((g) => `<div class="skill reveal"><h3>${esc(g[lang])}</h3><div>${g.items.map((i) => `<span>${esc(i)}</span>`).join("")}</div></div>`).join("");
     $("#archiveList").innerHTML = EARLIER.map(([n, c, d]) => `<div class="arc reveal"><b>${esc(n)}</b><small>${esc(t(c))}</small><p>${esc(t(d))}</p></div>`).join("");
     observe();
+    layoutFilm();
     if (modal.classList.contains("open")) route();
   }
 
@@ -173,6 +184,132 @@
     const f = (n) => { const k = Math.min((n - t0) / 1500, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))) + suf; if (k < 1) requestAnimationFrame(f); };
     requestAnimationFrame(f);
   }
+
+  // always-visible contact actions: nav, side dock, mobile bar
+  const WA = `https://wa.me/${PROFILE.phone.replace(/\D/g, "")}`, TEL = `tel:${PROFILE.phone}`, MAIL = `mailto:${PROFILE.email}`, CV = "Omar_Ahmed_Amin_CV_2026.pdf";
+  function renderCtas(u) {
+    $("#navWa").href = WA; $("#navWa").innerHTML = ICON.wa + esc(u.message);
+    $("#navMail").href = MAIL; $("#navMail").innerHTML = ICON.mail + esc(u.mail);
+    $("#cvbtn").innerHTML = ICON.dl + esc(u.cv);
+    const d = [["wa", WA, ICON.wa, u.wa, 1], ["", MAIL, ICON.mail, u.mail], ["", TEL, ICON.call, u.call], ["", PROFILE.linkedin, ICON.li, u.li, 1], ["cv", CV, ICON.dl, u.cv]];
+    $("#dock").innerHTML = d.map(([c, h, i, l, ext]) => `<a class="${c}" href="${h}"${ext ? ' target="_blank" rel="noopener"' : ""}${c === "cv" ? " download" : ""} aria-label="${esc(l)}">${i}<span>${esc(l)}</span></a>`).join("");
+    $("#mbar").innerHTML = `<a class="wa" href="${WA}" target="_blank" rel="noopener">${ICON.wa}${esc(u.message)}</a><a href="${TEL}">${ICON.call}${esc(u.call)}</a><a class="cv" href="${CV}" download>${ICON.dl}${esc(u.cv)}</a>`;
+  }
+
+  // GitHub-style profile
+  const LANGC = { Flutter: "#00B4AB", Dart: "#00B4AB", "React Native": "#61dafb", "Next.js": "#24292f", Android: "#3DDC84", React: "#61dafb", "Node.js": "#3c873a", TypeScript: "#3178c6", PHP: "#4F5D95", Laravel: "#f05340", Python: "#3572A5", PostgreSQL: "#336791", MySQL: "#00758f", Firebase: "#FFCA28", Docker: "#2496ED", Strapi: "#8e75ff", Redis: "#DC382D" };
+  const ym = (s) => s === "now" ? 2026 * 12 + 9 : (+s.slice(0, 4)) * 12 + (+s.slice(5, 7) - 1);
+  function renderGh(u) {
+    const g = u.gh, live = liveApps().length;
+    const MON = lang === "ar" ? ["ينا", "فبر", "مار", "أبر", "ماي", "يون", "يول", "أغس", "سبت", "أكت", "نوف", "ديس"] : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const spans = [...EXPERIENCE.filter((e) => e.from), FREELANCE];
+    let cal = `<span></span>${MON.map((m) => `<span>${m}</span>`).join("")}`;
+    for (let y = 2018; y <= 2026; y++) {
+      cal += `<span class="yl">${y}</span>`;
+      for (let m = 0; m < 12; m++) {
+        const k = y * 12 + m;
+        if (k > ym("now")) { cal += `<i class="x"></i>`; continue; }
+        const n = spans.reduce((a, e) => a + (k >= ym(e.from) && k <= ym(e.to) ? e.load : 0), 0);
+        cal += `<i data-l="${Math.min(n, 4)}" title="${MON[m]} ${y}: ${n} ${g.tip}" style="transition-delay:${(y - 2018) * 60 + m * 18}ms"></i>`;
+      }
+    }
+    const cnt = {};
+    PROJECTS.forEach((p) => p.stack.forEach((s) => { if (LANGC[s]) cnt[s] = (cnt[s] || 0) + 1; }));
+    const tot = Object.values(cnt).reduce((a, b) => a + b, 0);
+    const langs = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 8);
+    const pins = ["dentalux", "rbm", "curesuite", "rakny", "ptfinder", "tiba"].map((id) => PROJECTS.find((p) => p.id === id)).filter(Boolean);
+    const repo = (p) => { const l = p.stack.find((s) => LANGC[s]) || p.stack[0];
+      return `<div class="repo" data-id="${p.id}" tabindex="0"><div class="t">${ICON.repo}<a href="#project/${p.id}">${esc(p.org.toLowerCase().replace(/\s+/g, "-"))}/<b>${esc(p.id)}</b></a><span class="pub">${u.status[p.status]}</span></div>
+        <p>${esc(t(p.summary))}</p><div class="f"><span><i class="dot" style="background:${LANGC[l] || "#999"}"></i>${esc(l)}</span><span>${t(p.deliv).length} ${u.products}</span>${p.apps ? `<span>${p.apps.length} ${g.live}</span>` : ""}</div></div>`; };
+    $("#gh").innerHTML = `
+      <aside class="gh-side reveal">
+        <img src="assets/omar.jpg" alt="${esc(t(PROFILE.name))}">
+        <h3>${esc(t(PROFILE.name))}</h3><div class="handle mono">${g.handle}</div>
+        <p class="bio">${esc(g.bio)}</p>
+        <a class="btn" href="${WA}" target="_blank" rel="noopener">${ICON.wa}${esc(g.follow)}</a>
+        <div class="gh-counts"><span><b>${PROJECTS.length}</b> ${g.repos}</span><span><b>${live}</b> ${g.live}</span><span><b>8+</b> ${g.years}</span></div>
+        <ul class="gh-meta"><li>${ICON.org}CodeWealth</li><li>${ICON.pin}${lang === "ar" ? "القاهرة، مصر" : "Cairo, Egypt"}</li><li>${ICON.link}<a href="${MAIL}">${esc(PROFILE.email)}</a></li><li>${ICON.link}<a href="${PROFILE.linkedin}" target="_blank" rel="noopener">linkedin/omar-amin</a></li></ul>
+      </aside>
+      <div class="gh-main">
+        <div class="gh-h">${g.pinned}</div>
+        <div class="pinned">${pins.map(repo).join("")}</div>
+        <div class="gh-row"><div class="gh-box reveal"><div class="gh-h">${g.activity}</div><div class="cal" id="cal">${cal}</div>
+          <div class="legend">${g.less}${[0, 1, 2, 3, 4].map((l) => `<i class="cal-l" style="background:${l ? `color-mix(in srgb,var(--teal) ${[0, 32, 55, 78, 100][l]}%,var(--paper2))` : "var(--paper2)"}"></i>`).join("")}${g.more}</div></div>
+        <div class="gh-box reveal"><div class="gh-h">${g.stack}</div>
+          <div class="lbar" id="lbar">${langs.map(([l, n]) => `<span data-w="${(n / tot * 100).toFixed(1)}" style="background:${LANGC[l]}"></span>`).join("")}</div>
+          <div class="llist">${langs.map(([l, n]) => `<span><i class="dot" style="background:${LANGC[l]}"></i><b>${esc(l)}</b> <small>${(n / tot * 100).toFixed(1)}%</small></span>`).join("")}</div><p class="gh-note">${g.note}</p></div></div>
+        <div class="term reveal" id="term"><div class="bar"><i></i><i></i><i></i><span>omar@codewealth: ~/career — ${g.log}</span></div><pre class="mono" id="termout"></pre></div>
+      </div>`;
+    const lines = [`<span class="p">$</span> git log --oneline --graph`];
+    EXPERIENCE.filter((e) => e.from).forEach((e, i) => lines.push(`* <span class="h">${e.hash}</span>${i === 0 ? ` <span class="ref">(HEAD -> main)</span>` : ""} ${esc(e.from)}  ${esc(t(e.role))} @ ${esc(e.org)}`));
+    lines.push(`* <span class="h">0000000</span> <span class="c">${lang === "ar" ? "init: بكالوريوس علوم الحاسب" : "init: B.Sc. Computer Science"}</span>`);
+    $("#termout").dataset.lines = JSON.stringify(lines); $("#termout").innerHTML = "";
+    termDone = false;
+    const sec = $("#profile");
+    ghIo?.disconnect();
+    ghIo = new IntersectionObserver((es) => { if (es[0].isIntersecting) { playGh(); ghIo.disconnect(); } }, { threshold: 0.15 });
+    ghIo.observe(sec);
+    $("#gh").onclick = go;
+  }
+  let ghIo, termDone = false;
+  function playGh() {
+    $("#cal")?.classList.add("in");
+    $$("#lbar span").forEach((s) => (s.style.width = s.dataset.w + "%"));
+    if (termDone) return; termDone = true;
+    const out = $("#termout"), lines = JSON.parse(out.dataset.lines);
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let i = 0;
+    const next = () => { out.innerHTML = lines.slice(0, i + 1).join("\n") + (i < lines.length - 1 ? "" : '\n<span class="p">$</span> <span class="cur"></span>'); if (++i < lines.length) setTimeout(next, still ? 0 : 260); };
+    next();
+  }
+
+  // film: scroll-driven hero (Olfa technique: phased progress drives every layer)
+  const film = $("#film"), stage = $("#stage");
+  const clamp = (x) => Math.min(Math.max(x, 0), 1), seg = (p, a, b) => clamp((p - a) / (b - a));
+  const eo = (x) => 1 - Math.pow(1 - x, 3), eio = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const noFilm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (noFilm) root.classList.add("no-film");
+  const START = [[-18, 6, -10], [92, -4, 12], [104, 34, -8], [-26, 44, 10], [96, 72, 9], [-10, 88, -12], [40, -14, 6]];
+  function layoutFilm() {
+    if (noFilm) return;
+    stage.style.setProperty("--out", 0);
+    const W = stage.clientWidth, H = stage.clientHeight, sr = stage.getBoundingClientRect();
+    const ar = $(".arch").getBoundingClientRect(), ax = ar.left - sr.left, ay = ar.top - sr.top;
+    stage.style.setProperty("--dx", ax + ar.width / 2 + "px"); stage.style.setProperty("--dy", ay + ar.height / 2 + "px");
+    stage.style.setProperty("--dsz", Math.ceil(Math.hypot(W, H) * 2.1) + "px");
+    const items = $$("#flock a"), n = items.length, mob = W < 700;
+    const cols = mob ? 4 : 7, sz = mob ? 56 : 78, gx = mob ? 30 : 62, gy = mob ? 44 : 54;
+    const rows = Math.ceil(n / cols), top = H * (mob ? 0.5 : 0.48), base = mob ? 46 : 58;
+    items.forEach((a, i) => {
+      const r = Math.floor(i / cols), inRow = Math.min(cols, n - r * cols), c = i % cols;
+      const rowW = inRow * sz + (inRow - 1) * gx, x0 = (W - rowW) / 2;
+      const ex = x0 + c * (sz + gx), ey = top + r * (sz + gy);
+      let sx, sy, o0 = 1, rot;
+      if (i < START.length) { const [px, py, rr] = START[i]; sx = ax + ar.width * px / 100 - base / 2; sy = ay + ar.height * py / 100; if (mob) sy = Math.min(sy, ay + ar.height - base); rot = rr; }
+      else { const k = i - START.length, side = k % 2 ? 1 : -1; sx = W / 2 + side * (W * 0.55 + k * 20); sy = H * (0.2 + (k * 0.13) % 0.7); o0 = 0; rot = side * 25; }
+      a.style.cssText += `;--sx:${sx.toFixed(1)}px;--sy:${sy.toFixed(1)}px;--ex:${ex.toFixed(1)}px;--ey:${ey.toFixed(1)}px;--r:${rot}deg;--o0:${o0};--sz:${base}px;--grow:${(sz / base - 1).toFixed(3)}`;
+    });
+    filmScroll();
+  }
+  function filmScroll() {
+    if (noFilm) return;
+    const r = film.getBoundingClientRect(), p = clamp(-r.top / (film.offsetHeight - innerHeight));
+    const v = { out: eo(seg(p, 0, 0.14)), wipe: eio(seg(p, 0.05, 0.3)), pat: seg(p, 0.22, 0.34), head: eo(seg(p, 0.26, 0.4)), gather: eio(seg(p, 0.3, 0.68)) };
+    for (const k in v) stage.style.setProperty("--" + k, v[k].toFixed(4));
+    $("#hero").style.pointerEvents = v.out > 0.5 ? "none" : "";
+    $("#flock").style.pointerEvents = v.gather > 0.9 ? "auto" : "none";
+  }
+  addEventListener("resize", layoutFilm);
+  addEventListener("scroll", filmScroll, { passive: true });
+
+  // magnetic primary buttons
+  if (matchMedia("(hover: hover)").matches) document.addEventListener("pointermove", (e) => {
+    const b = e.target.closest(".store.dark, .store.light, #cvbtn, .dock a");
+    $$(".mag").forEach((m) => { if (m !== b) { m.style.transform = ""; m.classList.remove("mag"); } });
+    if (!b || b.closest(".dock")) return;
+    const r = b.getBoundingClientRect();
+    b.classList.add("mag"); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.18}px, ${(e.clientY - r.top - r.height / 2) * 0.28}px)`;
+  });
 
   renderStatic();
   onScroll();

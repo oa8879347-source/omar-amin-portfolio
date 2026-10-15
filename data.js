@@ -5,7 +5,7 @@ window.PROFILE = {
   linkedin: "https://www.linkedin.com/in/omar-amin-36a6a71aa",
   stats: [
     { value: 8, suffix: "+", en: "years shipping software", ar: "سنوات في تطوير البرمجيات" },
-    { value: 15, suffix: "", en: "apps live on the stores", ar: "تطبيق منشور على المتاجر" },
+    { value: 14, suffix: "", en: "apps live on the stores", ar: "تطبيق منشور على المتاجر" },
     { value: 20, suffix: "+", en: "projects led as CTO & lead", ar: "مشروع قدتُه كمدير تقني وقائد فريق" },
     { value: 58, suffix: "", en: "software products tracked", ar: "منتج برمجي تحت إدارتي" },
   ],
@@ -33,6 +33,10 @@ window.UI = {
     expTitle: "Experience", skillsTitle: "Skills", archTitle: "Earlier projects", archSub: "2018 to 2025, freelance and full-time.",
     contactTitle: "Got a product to build?", contactSub: "I reply within a day.",
     m: { problem: "The problem", built: "What we built", outcome: "Outcome", role: "My role", scope: "Scope", stack: "Stack", status: "Status", apps: "Download", share: "Copy link", copied: "Copied", nda: "Screens are under NDA or still in private development. A live demo is available on request.", ios: "App Store", android: "Google Play" },
+    wa: "WhatsApp", mail: "Email", call: "Call", li: "LinkedIn", message: "Message me", scroll: "Scroll",
+    gatherTitle: "14 apps. All live.", gatherSub: "Each of these is published on the App Store or Google Play. Keep scrolling to open any of them.",
+    ghTitle: "Profile", ghSub: "A developer's view of my work: where I've been, what I build with, and what's pinned.",
+    gh: { handle: "omar-amin", bio: "CTO @ CodeWealth. I ship mobile apps, ERPs and SaaS platforms, and run their servers.", pinned: "Pinned", activity: "Career activity, 2018 to 2026", less: "Less", more: "More", stack: "Stack across my projects", log: "Career log", follow: "Message", repos: "projects", live: "live apps", years: "years", tip: "active engagements", note: "Activity counts parallel roles and freelance work per month. Stack share is counted across the 23 projects on this page." },
     theme: "Theme", footer: "Designed & built by Omar Ahmed Amin",
   },
   ar: {
@@ -56,6 +60,10 @@ window.UI = {
     expTitle: "الخبرات", skillsTitle: "المهارات", archTitle: "مشاريع سابقة", archSub: "من 2018 إلى 2025، عمل حر ودوام كامل.",
     contactTitle: "عندك منتج تريد بناءه؟", contactSub: "أرد خلال يوم واحد.",
     m: { problem: "المشكلة", built: "ما الذي بنيناه", outcome: "النتيجة", role: "دوري", scope: "النطاق", stack: "التقنيات", status: "الحالة", apps: "التحميل", share: "نسخ الرابط", copied: "تم النسخ", nda: "الشاشات محمية باتفاقية سرية أو ما زالت قيد التطوير. يمكن تقديم عرض مباشر عند الطلب.", ios: "App Store", android: "Google Play" },
+    wa: "واتساب", mail: "البريد", call: "اتصال", li: "لينكدإن", message: "راسلني", scroll: "مرّر",
+    gatherTitle: "14 تطبيقًا، كلها منشورة.", gatherSub: "كل هذه التطبيقات منشورة على App Store أو Google Play. استمر في التمرير لفتح أي منها.",
+    ghTitle: "الملف التقني", ghSub: "نظرة مطوّر على عملي: أين عملت، وبماذا أبني، وما المشاريع المثبتة.",
+    gh: { handle: "omar-amin", bio: "مدير تقني في CodeWealth. أطلق تطبيقات موبايل وأنظمة ERP ومنصات SaaS وأدير سيرفراتها.", pinned: "مشاريع مثبتة", activity: "نشاطي المهني من 2018 إلى 2026", less: "أقل", more: "أكثر", stack: "التقنيات عبر مشاريعي", log: "سجل المسيرة", follow: "راسلني", repos: "مشروع", live: "تطبيق منشور", years: "سنوات", tip: "ارتباطات عمل نشطة", note: "النشاط يحسب الوظائف والعمل الحر المتوازي في كل شهر، ونسب التقنيات محسوبة من المشاريع الـ23 في هذه الصفحة." },
     theme: "المظهر", footer: "تصميم وتطوير عمر أحمد أمين",
   },
 };
@@ -63,7 +71,7 @@ window.UI = {
 window.EXPERIENCE = [
   {
     role: { en: "Chief Technology Officer & Lead DevOps", ar: "المدير التقني (CTO) ومسؤول DevOps" },
-    org: "CodeWealth", place: { en: "Sheikh Zayed, Egypt", ar: "الشيخ زايد، مصر" }, date: { en: "2025 — Present", ar: "2025 — حتى الآن" }, link: "https://www.codewealth.net",
+    from: "2025-07", to: "now", load: 3, hash: "e3a91f2", org: "CodeWealth", place: { en: "Sheikh Zayed, Egypt", ar: "الشيخ زايد، مصر" }, date: { en: "2025 — Present", ar: "2025 — حتى الآن" }, link: "https://www.codewealth.net",
     points: {
       en: [
         "Responsible for technology, delivery and code on every CodeWealth project: 14+ clients, 58 software products.",
@@ -81,7 +89,7 @@ window.EXPERIENCE = [
   },
   {
     role: { en: "Senior Software Developer", ar: "مطور برمجيات أول" },
-    org: "Sigma", place: { en: "Mall of Arabia, Giza, Egypt", ar: "مول العرب، الجيزة، مصر" }, date: { en: "2025 — 2026 · 1 year", ar: "2025 — 2026 · سنة" },
+    from: "2025-07", to: "2026-07", load: 1, hash: "9b7c4d1", org: "Sigma", place: { en: "Mall of Arabia, Giza, Egypt", ar: "مول العرب، الجيزة، مصر" }, date: { en: "2025 — 2026 · 1 year", ar: "2025 — 2026 · سنة" },
     points: {
       en: ["Worked on Red Bull MOBILE Saudi, the telecom self-care app for Android and iOS.", "Shipped plan and line management, add-ons, Giga Coins rewards, invite & earn and retention offers, plus stability releases up to the 3.0 refresh."],
       ar: ["عملت على تطبيق Red Bull MOBILE السعودية لإدارة خطوط الاتصالات على Android و iOS.", "نفّذت إدارة الباقات والخط والإضافات ومكافآت Giga Coins وميزة ادعُ واكسب وعروض الاحتفاظ بالعملاء، إلى جانب إصدارات الاستقرار حتى تحديث 3.0."],
@@ -89,7 +97,7 @@ window.EXPERIENCE = [
   },
   {
     role: { en: "Senior Software Developer", ar: "مطور برمجيات أول" },
-    org: "Shelter Investment Group", place: { en: "Cairo, Egypt", ar: "القاهرة، مصر" }, date: { en: "Oct 2024 — Jun 2025", ar: "أكتوبر 2024 — يونيو 2025" },
+    from: "2024-10", to: "2025-06", load: 2, hash: "51ad0e8", org: "Shelter Investment Group", place: { en: "Cairo, Egypt", ar: "القاهرة، مصر" }, date: { en: "Oct 2024 — Jun 2025", ar: "أكتوبر 2024 — يونيو 2025" },
     points: {
       en: ["Built and published 9 live apps for Shelter Technology: CureSuite, CureSuite Clinic, PT-Finder, PT-Finder Trainer, Five Fits, Five Fits Trainer, LA7, Absi and Wee in.", "Covered healthcare, fitness, events and secure messaging, on both the App Store and Google Play."],
       ar: ["طوّرت ونشرت 9 تطبيقات لشركة Shelter Technology: CureSuite و CureSuite Clinic و PT-Finder و PT-Finder Trainer و Five Fits و Five Fits Trainer و LA7 و Absi و Wee in.", "في مجالات الرعاية الصحية واللياقة والفعاليات والمراسلة الآمنة، على App Store و Google Play."],
@@ -97,30 +105,32 @@ window.EXPERIENCE = [
   },
   {
     role: { en: "Software Development Team Leader", ar: "قائد فريق تطوير البرمجيات" },
-    org: "Geomama", place: { en: "Giza, Egypt", ar: "الجيزة، مصر" }, date: { en: "Mar 2023 — Jul 2024", ar: "مارس 2023 — يوليو 2024" },
+    from: "2023-03", to: "2024-07", load: 1, hash: "7c20b9e", org: "Geomama", place: { en: "Giza, Egypt", ar: "الجيزة، مصر" }, date: { en: "Mar 2023 — Jul 2024", ar: "مارس 2023 — يوليو 2024" },
     points: { en: ["Led the dev team, introduced agile sprints and code reviews, and kept delivery on schedule."], ar: ["قدت فريق التطوير، وطبّقت منهجية Agile ومراجعة الكود، والتزمت بمواعيد التسليم."] },
   },
   {
     role: { en: "Senior Flutter Developer", ar: "مطور Flutter أول" },
-    org: "Helpoo", place: { en: "Cairo, Egypt", ar: "القاهرة، مصر" }, date: { en: "Oct 2023 — Jan 2024", ar: "أكتوبر 2023 — يناير 2024" },
+    from: "2023-10", to: "2024-01", load: 1, hash: "c41f7a3", org: "Helpoo", place: { en: "Cairo, Egypt", ar: "القاهرة، مصر" }, date: { en: "Oct 2023 — Jan 2024", ar: "أكتوبر 2023 — يناير 2024" },
     points: { en: ["Built and maintained the Helpoo roadside-assistance app, and worked on the driver app and admin tool.", "Cut Google Maps costs without changing the user experience."], ar: ["طوّرت وصنت تطبيق Helpoo للمساعدة على الطريق، وعملت على تطبيق السائق ولوحة الإدارة.", "خفّضت تكلفة خرائط Google دون أي تغيير في تجربة المستخدم."] },
   },
   {
     role: { en: "Senior Flutter Developer", ar: "مطور Flutter أول" },
-    org: "e& (Etisalat Misr)", place: { en: "Cairo, Egypt", ar: "القاهرة، مصر" }, date: { en: "Dec 2020 — Mar 2023", ar: "ديسمبر 2020 — مارس 2023" },
+    from: "2020-12", to: "2023-03", load: 1, hash: "2d8e6b0", org: "e& (Etisalat Misr)", place: { en: "Cairo, Egypt", ar: "القاهرة، مصر" }, date: { en: "Dec 2020 — Mar 2023", ar: "ديسمبر 2020 — مارس 2023" },
     points: { en: ["Built Etisalat Sports and Etisalat Games, wrote unit and integration tests, and mentored junior developers."], ar: ["طوّرت تطبيقي اتصالات سبورتس واتصالات جيمز، وكتبت اختبارات الوحدات والتكامل، ودرّبت المطورين الجدد."] },
   },
   {
     role: { en: "Flutter Developer / IT Manager", ar: "مطور Flutter / مدير تقنية المعلومات" },
-    org: "ICS", place: { en: "Cairo, Egypt", ar: "القاهرة، مصر" }, date: { en: "Aug 2018 — Jun 2019", ar: "أغسطس 2018 — يونيو 2019" },
+    from: "2018-08", to: "2019-06", load: 1, hash: "a07c3f5", org: "ICS", place: { en: "Cairo, Egypt", ar: "القاهرة، مصر" }, date: { en: "Aug 2018 — Jun 2019", ar: "أغسطس 2018 — يونيو 2019" },
     points: { en: ["Built Flutter apps, made the architecture calls, and set up the CI/CD pipeline."], ar: ["طوّرت تطبيقات Flutter، واتخذت قرارات البنية التقنية، وأعددت خط CI/CD."] },
   },
   {
     role: { en: "Teaching Assistant", ar: "معيد" },
-    org: "Misr University for Science & Technology", place: { en: "Giza, Egypt", ar: "الجيزة، مصر" }, date: { en: "Sep 2018 — Jan 2019", ar: "سبتمبر 2018 — يناير 2019" },
+    from: "2018-09", to: "2019-01", load: 1, hash: "f00d001", org: "Misr University for Science & Technology", place: { en: "Giza, Egypt", ar: "الجيزة، مصر" }, date: { en: "Sep 2018 — Jan 2019", ar: "سبتمبر 2018 — يناير 2019" },
     points: { en: ["Ran labs and helped design courses and exams."], ar: ["أدرت المعامل وساهمت في إعداد المقررات والامتحانات."] },
   },
 ];
+
+window.FREELANCE = { from: "2018-08", to: "2023-09", load: 1 };
 
 window.SKILLS = [
   { en: "Languages", ar: "لغات البرمجة", items: ["Python", "JavaScript", "TypeScript", "Node.js", "PHP", "Dart", "Java", "SQL"] },

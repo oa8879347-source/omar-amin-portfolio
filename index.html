@@ -12,8 +12,8 @@
 <link rel="icon" href="assets/omar.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700;800&family=Montserrat:wght@400;500;600;700&family=Alexandria:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700;800&family=Montserrat:wght@400;500;600;700&family=Alexandria:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=9">
 <script>
   (function(){var q=new URLSearchParams(location.search),l=q.get("lang")||localStorage.getItem("lang")||"en",t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
   document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.documentElement.dataset.theme=t;})();
@@ -29,12 +29,20 @@
     <button class="tbtn" id="motion" aria-label="Pause motion" title="Pause motion"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button>
     <button class="tbtn" id="theme" aria-label="Toggle theme"><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
     <button class="lang" id="lang"></button>
+    <a class="btn small ghost" id="navWa" href="#" target="_blank" rel="noopener"></a>
+    <a class="btn small ghost" id="navMail" href="#"></a>
     <a class="btn small" id="cvbtn" href="Omar_Ahmed_Amin_CV_2026.pdf" download></a>
   </div>
 </header>
+<aside class="dock" id="dock" aria-label="Quick contact"></aside>
+<div class="mbar" id="mbar"></div>
 
 <main id="top">
-  <section class="hero">
+  <section class="film" id="film">
+    <div class="stage" id="stage">
+      <div class="disc" id="disc" aria-hidden="true"></div>
+      <div class="disc-pat" aria-hidden="true"><div class="pattern"></div></div>
+      <section class="hero" id="hero">
     <span class="ring r1" aria-hidden="true"></span><span class="ring r2" aria-hidden="true"></span>
     <div class="hero-copy">
       <p class="pill" id="eyebrow"></p>
@@ -50,8 +58,13 @@
     </div>
     <div class="hero-art">
       <div class="arch"><img src="assets/omar.jpg" alt="Omar Ahmed Amin"></div>
-      <div class="floaters" id="floaters" aria-hidden="true"></div>
       <div class="sticker">CTO<br><small>CodeWealth</small></div>
+    </div>
+  </section>
+
+      <div class="gather-head" id="gatherHead"><h2 id="gatherTitle"></h2><p id="gatherSub"></p></div>
+      <div class="flock" id="flock"></div>
+      <div class="scrollhint" id="scrollhint"><span></span></div>
     </div>
   </section>
 
@@ -80,24 +93,29 @@
     </div>
   </section>
 
+  <section id="profile" class="section gh">
+    <div class="head reveal"><span class="num">03</span><h2 id="ghTitle"></h2><p id="ghSub"></p></div>
+    <div class="gh-wrap" id="gh"></div>
+  </section>
+
   <section id="work" class="section">
-    <div class="head reveal"><span class="num">03</span><h2 id="workTitle"></h2><p id="workSub"></p></div>
+    <div class="head reveal"><span class="num">04</span><h2 id="workTitle"></h2><p id="workSub"></p></div>
     <div class="filters reveal" id="filters"></div>
     <div class="cards" id="cards"></div>
   </section>
 
   <section id="experience" class="section">
-    <div class="head reveal"><span class="num">04</span><h2 id="expTitle"></h2></div>
+    <div class="head reveal"><span class="num">05</span><h2 id="expTitle"></h2></div>
     <div class="jobs" id="jobs"></div>
   </section>
 
   <section id="skills" class="section">
-    <div class="head reveal"><span class="num">05</span><h2 id="skillsTitle"></h2></div>
+    <div class="head reveal"><span class="num">06</span><h2 id="skillsTitle"></h2></div>
     <div class="skills" id="skillgrid"></div>
   </section>
 
   <section id="archive" class="section">
-    <div class="head reveal"><span class="num">06</span><h2 id="archTitle"></h2><p id="archSub"></p></div>
+    <div class="head reveal"><span class="num">07</span><h2 id="archTitle"></h2><p id="archSub"></p></div>
     <div class="archive" id="archiveList"></div>
   </section>
 
@@ -120,7 +138,7 @@
 </div>
 <div class="lightbox" id="lightbox"><img alt=""></div>
 
-<script src="data.js?v=7"></script>
-<script src="app.js?v=7"></script>
+<script src="data.js?v=9"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>
