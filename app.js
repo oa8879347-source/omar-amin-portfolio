@@ -362,12 +362,12 @@
     J = [];
     const add = (el, x, y, z, extra = {}) => J.push({ el, x, y, z, ...extra });
     add($("#jIntro"), ix, mob ? -20 : 0, 0);
-    demoItem = { el: $("#jDemo"), x: dx, y: mob ? 10 : 0, z: -1700, demo: 1, far: mob ? 1250 : 2300 }; J.push(demoItem);
+    demoItem = { el: $("#jDemo"), x: dx, y: mob ? 10 : 0, z: -1700, demo: 1, far: mob ? 950 : 2300 }; J.push(demoItem);
     if (!mob) $("#jIntro").style.width = "min(560px,40vw)";
     let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
     $$(".j-chip").forEach((el, i) => {
       let x, y; do { x = (rnd() - 0.5) * W * 1.5; y = (rnd() - 0.5) * H * 1.3; } while (Math.abs(x) < W * 0.22 && Math.abs(y) < H * 0.3);
-      add(el, x, y, (mob ? -1000 : -350) - i * 330, { ry: (rnd() - 0.5) * 50, rx: (rnd() - 0.5) * 30 });
+      add(el, x, y, (mob ? -1500 : -350) - i * 330, { ry: (rnd() - 0.5) * 50, rx: (rnd() - 0.5) * 30 });
     });
     add($("#jProj"), 0, 0, -3300);
     const R = mob ? W * 0.62 : Math.min(W * 0.42, H * 0.62);
