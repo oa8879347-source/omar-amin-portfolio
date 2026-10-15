@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700;800&family=Montserrat:wght@400;500;600;700&family=Alexandria:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=13">
 <script>
   (function(){var q=new URLSearchParams(location.search),l=q.get("lang")||localStorage.getItem("lang")||"en",t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
   document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.documentElement.dataset.theme=t;})();
@@ -40,35 +40,37 @@
 <main id="top">
   <section class="film" id="film">
     <div class="stage" id="stage">
-      <div class="disc" id="disc" aria-hidden="true"></div>
-      <div class="disc-pat" aria-hidden="true"><div class="pattern"></div></div>
-      <section class="hero" id="hero">
-    <span class="ring r1" aria-hidden="true"></span><span class="ring r2" aria-hidden="true"></span>
-    <div class="hero-copy">
-      <p class="pill" id="eyebrow"></p>
-      <h1 class="wordmark" id="wordmark"></h1>
-      <p class="statement" id="h1"></p>
-      <p class="lead" id="lead"></p>
-      <div class="cta">
-        <a class="store dark" href="#live" id="ctaWork"></a>
-        <a class="store" id="ctaMail" href="#"></a>
-        <a class="store" id="ctaLi" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="hx">
+        <div class="hx-copy">
+          <a class="hx-me" href="#experience"><img src="assets/omar.jpg" alt="Omar Ahmed Amin"><span><b id="hxName"></b><small id="eyebrow"></small></span></a>
+          <h1 class="hx-title" id="hxTitle"></h1>
+          <p class="hx-lead" id="lead"></p>
+          <div class="cta">
+            <a class="store dark" href="#nubni" id="ctaWork"></a>
+            <a class="store" id="ctaMail" href="#"></a>
+            <a class="store" id="ctaLi" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+          <ol class="hx-steps" id="hxSteps"></ol>
+        </div>
+        <div class="hx-demo" id="hxDemo" data-s="0">
+          <div class="win">
+            <div class="bz"><i></i><i></i><i></i><span>nubni.com</span><b class="hx-model" id="hxModel"></b></div>
+            <div class="panes">
+              <div class="pane p0"><button class="mic" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="say" id="hxSay"></p></div>
+              <div class="pane p1"><h4 id="hxPlanH"></h4><ul id="hxPlan"></ul><button class="approve" id="hxApprove" tabindex="-1"></button></div>
+              <div class="pane p2"><div class="tree" id="hxTree"></div><pre class="code" id="hxCode"></pre></div>
+              <div class="pane p3"><div class="ph"><div class="ph-top"><b id="hxAppName"></b><small id="hxAppSub"></small></div><div class="ph-list" id="hxDocs"></div><div class="ph-btn" id="hxBook"></div></div><div class="ship" id="hxShip"></div></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="based" id="based"></p>
-    </div>
-    <div class="hero-art">
-      <div class="arch"><img src="assets/omar.jpg" alt="Omar Ahmed Amin"></div>
-      <div class="sticker">CTO<br><small>CodeWealth</small></div>
-    </div>
-  </section>
-
-      <div class="gather-head" id="gatherHead"><h2 id="gatherTitle"></h2><p id="gatherSub"></p></div>
-      <div class="flock" id="flock"></div>
       <div class="scrollhint" id="scrollhint"><span></span></div>
     </div>
   </section>
 
   <section class="stats" id="stats"></section>
+
+  <section class="flag" id="nubni"><div class="flag-in" id="flag"></div></section>
 
   <div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
 
@@ -138,7 +140,7 @@
 </div>
 <div class="lightbox" id="lightbox"><img alt=""></div>
 
-<script src="data.js?v=11"></script>
-<script src="app.js?v=11"></script>
+<script src="data.js?v=13"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
     const u = U();
     root.lang = lang; root.dir = u.dir;
     document.title = lang === "ar" ? "عمر أحمد أمين — مدير تقني ومهندس برمجيات أول" : "Omar Ahmed Amin — CTO & Senior Software Engineer";
-    const ids = ["work", "process", "experience", "profile", "contact"];
+    const ids = ["work", "nubni", "experience", "profile", "contact"];
     $("#navlinks").innerHTML = u.nav.map((n, i) => `<a href="#${i === 0 ? "live" : ids[i]}">${n}</a>`).join("");
     $("#lang").textContent = u.other;
     $("#cvbtn").textContent = u.cv; $("#cv2").textContent = u.cv;
@@ -38,19 +38,14 @@
     $("#contactline").innerHTML = `${esc(PROFILE.email)} &nbsp;·&nbsp; <span dir="ltr">${esc(PROFILE.phone)}</span>`;
     $("#yr").textContent = new Date().getFullYear();
 
-    const name = t(PROFILE.name);
-    let n = 0;
-    $("#wordmark").innerHTML = name.split(" ").map((w) => lang === "ar"
-      ? `<span class="w" style="animation-delay:${0.15 + n++ * 0.18}s">${esc(w)}</span>`
-      : `<span class="w">${[...w].map((c) => `<span style="animation-delay:${0.15 + n++ * 0.045}s">${esc(c)}</span>`).join("")}</span>`).join(" ");
+    renderHero(u);
 
-    $("#stats").innerHTML = PROFILE.stats.map((s) => `<div class="stat reveal"><b data-to="${s.value}" data-suf="${s.suffix}">0${s.suffix}</b><span>${esc(s[lang])}</span></div>`).join("");
+    $("#stats").innerHTML = PROFILE.stats.map((s) => `<div class="stat reveal">${s.text ? `<b class="txt">${esc(s.text)}</b>` : `<b data-to="${s.value}" data-suf="${s.suffix}">0${s.suffix}</b>`}<span>${esc(s[lang])}</span></div>`).join("");
 
     const apps = liveApps();
-    $("#flock").innerHTML = apps.map((a, i) => `<a href="#project/${a.pid}" style="--d:${-i * 0.7}s" aria-label="${esc(a.name)}"><span class="ico${a.icon ? "" : " rb"}">${a.icon ? `<img src="${a.icon}" alt="">` : "RB"}</span><b>${esc(a.name)}</b></a>`).join("");
-    $("#gatherTitle").textContent = u.gatherTitle; $("#gatherSub").textContent = u.gatherSub;
     renderCtas(u);
     renderGh(u);
+    renderFlag(u);
     const chips = apps.map((a) => `<a href="#project/${a.pid}">${a.icon ? `<img src="${a.icon}" alt="">` : "<i>RB</i>"}${esc(a.name)}</a>`).join("");
     $("#marquee").innerHTML = chips + chips;
 
@@ -67,7 +62,7 @@
     setStep(0, true);
 
     const f = Object.entries(u.filters);
-    $("#filters").innerHTML = f.map(([k, v]) => `<button class="chip${k === filter ? " on" : ""}" data-f="${k}">${v} <small>${k === "all" ? PROJECTS.length : PROJECTS.filter((p) => p.status === k).length}</small></button>`).join("");
+    $("#filters").innerHTML = f.map(([k, v]) => `<button class="chip${k === filter ? " on" : ""}" data-f="${k}">${v}</button>`).join("");
     renderCards();
 
     $("#jobs").innerHTML = EXPERIENCE.map((j) => `
@@ -100,7 +95,7 @@
           <div class="meta">${esc(t(p.industry))} · ${esc(p.org)}</div>
           <h3>${esc(p.name)}</h3>
           <p>${esc(t(p.summary))}</p>
-          <div class="tags"><span>${t(p.deliv).length} ${u.products}</span>${p.stack.slice(0, 3).map((s) => `<span>${esc(s)}</span>`).join("")}</div>
+          <div class="tags">${p.stack.slice(0, 3).map((s) => `<span>${esc(s)}</span>`).join("")}</div>
           <span class="more">${u.view} <i>→</i></span>
         </div>
       </article>`).join("");
@@ -129,7 +124,7 @@
       <div class="pcs"><div><h4>${m.problem}</h4><p>${esc(t(p.problem))}</p></div><div><h4>${m.built}</h4><p>${esc(t(p.built))}</p></div><div><h4>${m.outcome}</h4><p>${esc(t(p.outcome))}</p></div></div>
       <div class="two">
         <div class="box"><h4>${m.role}</h4><p class="role">${esc(t(p.role))}</p><ul>${t(p.resp).map((r) => `<li>${esc(r)}</li>`).join("")}</ul></div>
-        <div class="box"><h4>${m.scope} · ${t(p.deliv).length} ${u.products}</h4><div class="deliv">${t(p.deliv).map((d) => `<span>${esc(d)}</span>`).join("")}</div><h4>${m.stack}</h4><div class="tags">${p.stack.map((s) => `<span>${esc(s)}</span>`).join("")}</div></div>
+        <div class="box"><h4>${m.scope}</h4><div class="deliv">${t(p.deliv).map((d) => `<span>${esc(d)}</span>`).join("")}</div><h4>${m.stack}</h4><div class="tags">${p.stack.map((s) => `<span>${esc(s)}</span>`).join("")}</div></div>
       </div>
       <div class="m-links">${(p.links || []).map((l) => `<a class="store dark" href="${l.url}" target="_blank" rel="noopener">${esc(t(l))} ↗</a>`).join("")}<button class="store" id="share">${m.share}</button></div>`;
     modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden";
@@ -185,6 +180,38 @@
     requestAnimationFrame(f);
   }
 
+  // flagship spotlight: Nubni
+  const FI = {
+    mic: '<path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5 11a7 7 0 0 0 14 0M12 18v3"/>',
+    wand: '<path d="m15 4 1.5 3L20 8.5 16.5 10 15 13l-1.5-3L10 8.5 13.5 7zM4 20l9-9"/>',
+    chat: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/>',
+    code: '<path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/>',
+    phone: '<rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/>',
+    cloud: '<path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/>',
+    plug: '<path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/>',
+    shield: '<path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/>',
+  };
+  let flagTimer;
+  function renderFlag(u) {
+    const f = u.flag, p = PROJECTS.find((x) => x.id === "nubni");
+    $("#flag").innerHTML = `
+      <div class="flag-top">
+        <div class="flag-copy reveal">
+          <span class="flag-tag">${esc(f.tag)}</span>
+          <h2><img src="${p.logo}" alt="">${esc(f.title)}</h2>
+          <p>${esc(f.lead)}</p>
+          <div class="flag-stack">${p.stack.map((s) => `<span>${esc(s)}</span>`).join("")}</div>
+          <div class="cta"><a class="store flag-btn" href="https://nubni.com" target="_blank" rel="noopener">${esc(f.visit)} ↗</a><a class="store flag-ghost" href="#project/nubni">${esc(f.open)}</a></div>
+        </div>
+        <div class="flag-shot reveal"><div class="bz"><i></i><i></i><i></i><span>nubni.com</span></div><div class="slides">${p.images.map((s, i) => `<img src="${s}" alt="Nubni screen ${i + 1}"${i ? ' loading="lazy"' : ""} class="${i ? "" : "on"}">`).join("")}</div></div>
+      </div>
+      <div class="flag-feats">${f.feats.map(([ic, h, d]) => `<div class="ff reveal"><svg viewBox="0 0 24 24">${FI[ic]}</svg><h3>${esc(h)}</h3><p>${esc(d)}</p></div>`).join("")}</div>`;
+    clearInterval(flagTimer);
+    let k = 0;
+    flagTimer = setInterval(() => { const im = $$("#flag .slides img"); if (!im.length) return; im[k].classList.remove("on"); k = (k + 1) % im.length; im[k].classList.add("on"); }, 3200);
+    $("#flag").addEventListener("pointermove", (e) => { const sh = e.target.closest(".flag-shot"); if (!sh) return; const r = sh.getBoundingClientRect(); sh.style.setProperty("--rx", ((e.clientY - r.top) / r.height - 0.5) * -6 + "deg"); sh.style.setProperty("--ry", ((e.clientX - r.left) / r.width - 0.5) * 8 + "deg"); });
+  }
+
   // always-visible contact actions: nav, side dock, mobile bar
   const WA = `https://wa.me/${PROFILE.phone.replace(/\D/g, "")}`, TEL = `tel:${PROFILE.phone}`, MAIL = `mailto:${PROFILE.email}`, CV = "Omar_Ahmed_Amin_CV_2026.pdf";
   function renderCtas(u) {
@@ -217,17 +244,17 @@
     PROJECTS.forEach((p) => p.stack.forEach((s) => { if (LANGC[s]) cnt[s] = (cnt[s] || 0) + 1; }));
     const tot = Object.values(cnt).reduce((a, b) => a + b, 0);
     const langs = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 8);
-    const pins = ["dentalux", "rbm", "curesuite", "rakny", "ptfinder", "tiba"].map((id) => PROJECTS.find((p) => p.id === id)).filter(Boolean);
+    const pins = ["nubni", "dentalux", "rbm", "curesuite", "rakny", "ptfinder"].map((id) => PROJECTS.find((p) => p.id === id)).filter(Boolean);
     const repo = (p) => { const l = p.stack.find((s) => LANGC[s]) || p.stack[0];
       return `<div class="repo" data-id="${p.id}" tabindex="0"><div class="t">${ICON.repo}<a href="#project/${p.id}">${esc(p.org.toLowerCase().replace(/\s+/g, "-"))}/<b>${esc(p.id)}</b></a><span class="pub">${u.status[p.status]}</span></div>
-        <p>${esc(t(p.summary))}</p><div class="f"><span><i class="dot" style="background:${LANGC[l] || "#999"}"></i>${esc(l)}</span><span>${t(p.deliv).length} ${u.products}</span>${p.apps ? `<span>${p.apps.length} ${g.live}</span>` : ""}</div></div>`; };
+        <p>${esc(t(p.summary))}</p><div class="f"><span><i class="dot" style="background:${LANGC[l] || "#999"}"></i>${esc(l)}</span>${p.status === "live" ? `<span>${u.status.live}</span>` : ""}</div></div>`; };
     $("#gh").innerHTML = `
       <aside class="gh-side reveal">
         <img src="assets/omar.jpg" alt="${esc(t(PROFILE.name))}">
         <h3>${esc(t(PROFILE.name))}</h3><div class="handle mono">${g.handle}</div>
         <p class="bio">${esc(g.bio)}</p>
         <a class="btn" href="${WA}" target="_blank" rel="noopener">${ICON.wa}${esc(g.follow)}</a>
-        <div class="gh-counts"><span><b>120+</b> ${g.repos}</span><span><b>${live}</b> ${g.live}</span><span><b>8+</b> ${g.years}</span></div>
+        <div class="gh-counts"><span><b>250+</b> ${g.repos}</span><span><b>8+</b> ${g.years}</span></div>
         <ul class="gh-meta"><li>${ICON.org}CodeWealth</li><li>${ICON.pin}${lang === "ar" ? "القاهرة، مصر" : "Cairo, Egypt"}</li><li>${ICON.link}<a href="${MAIL}">${esc(PROFILE.email)}</a></li><li>${ICON.link}<a href="${PROFILE.linkedin}" target="_blank" rel="noopener">linkedin/omar-amin</a></li></ul>
       </aside>
       <div class="gh-main">
@@ -263,42 +290,59 @@
     next();
   }
 
-  // film: scroll-driven hero (Olfa technique: phased progress drives every layer)
-  const film = $("#film"), stage = $("#stage");
-  const clamp = (x) => Math.min(Math.max(x, 0), 1), seg = (p, a, b) => clamp((p - a) / (b - a));
-  const eo = (x) => 1 - Math.pow(1 - x, 3), eio = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
-  const noFilm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (noFilm) root.classList.add("no-film");
-  const START = [[-18, 6, -10], [92, -4, 12], [104, 34, -8], [-26, 44, 10], [96, 72, 9], [-10, 88, -12], [40, -14, 6]];
-  function layoutFilm() {
-    if (noFilm) return;
-    stage.style.setProperty("--out", 0);
-    const W = stage.clientWidth, H = stage.clientHeight, sr = stage.getBoundingClientRect();
-    const ar = $(".arch").getBoundingClientRect(), ax = ar.left - sr.left, ay = ar.top - sr.top;
-    stage.style.setProperty("--dx", ax + ar.width / 2 + "px"); stage.style.setProperty("--dy", ay + ar.height / 2 + "px");
-    stage.style.setProperty("--dsz", Math.ceil(Math.hypot(W, H) * 2.1) + "px");
-    const items = $$("#flock a"), n = items.length, mob = W < 700;
-    const cols = mob ? 4 : 7, sz = mob ? 56 : 78, gx = mob ? 30 : 62, gy = mob ? 50 : 76;
-    const rows = Math.ceil(n / cols), top = H * (mob ? 0.5 : 0.48), base = mob ? 46 : 58;
-    items.forEach((a, i) => {
-      const r = Math.floor(i / cols), inRow = Math.min(cols, n - r * cols), c = i % cols;
-      const rowW = inRow * sz + (inRow - 1) * gx, x0 = (W - rowW) / 2;
-      const ex = x0 + c * (sz + gx), ey = top + r * (sz + gy);
-      let sx, sy, o0 = 1, rot;
-      if (i < START.length) { const [px, py, rr] = START[i]; sx = ax + ar.width * px / 100 - base / 2; sy = ay + ar.height * py / 100; if (mob) sy = Math.min(sy, ay + ar.height - base); rot = rr; }
-      else { const k = i - START.length, side = k % 2 ? 1 : -1; sx = W / 2 + side * (W * 0.55 + k * 20); sy = H * (0.2 + (k * 0.13) % 0.7); o0 = 0; rot = side * 25; }
-      a.style.cssText += `;--sx:${sx.toFixed(1)}px;--sy:${sy.toFixed(1)}px;--ex:${ex.toFixed(1)}px;--ey:${ey.toFixed(1)}px;--r:${rot}deg;--o0:${o0};--sz:${base}px;--grow:${(sz / base - 1).toFixed(3)}`;
-    });
-    filmScroll();
+  // hero: scroll-driven Nubni demo (Olfa technique: one pinned stage, scroll progress drives each phase)
+  const film = $("#film"), demo = $("#hxDemo");
+  const clamp = (x) => Math.min(Math.max(x, 0), 1);
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const CODE = [
+    ['c', '# api/bookings.py'], ['k', '@router.post("/bookings")'], ['', 'async def create_booking(b: BookingIn, user=Depends(auth)):'],
+    ['', '    slot = await slots.reserve(b.doctor_id, b.time)'], ['', '    pay = await paymob.intent(user, slot.price)'],
+    ['', '    await notify(b.doctor_id, "new_booking", slot)'], ['', '    return {"booking": slot.id, "pay_url": pay.url}'],
+  ];
+  const TREE = ["app/lib/main.dart", "app/lib/booking_screen.dart", "dashboard/src/app/doctors", "api/bookings.py", "db/schema.sql"];
+  let hx;
+  function renderHero(u) {
+    hx = u.hx;
+    $("#hxName").textContent = t(PROFILE.name);
+    $("#hxTitle").innerHTML = hx.title;
+    $("#hxModel").textContent = hx.model;
+    $("#hxSteps").innerHTML = hx.steps.map((st, i) => `<li data-i="${i}"><i style="--f:0"></i><b>0${i + 1}</b>${esc(st)}</li>`).join("");
+    $("#hxPlanH").textContent = hx.planH;
+    $("#hxPlan").innerHTML = hx.plan.map((x) => `<li><span class="ck"></span>${esc(x)}</li>`).join("");
+    $("#hxApprove").textContent = hx.approve;
+    $("#hxTree").innerHTML = TREE.map((f) => `<span>${f}</span>`).join("");
+    $("#hxCode").innerHTML = CODE.map(([c, l]) => `<span class="${c}">${esc(l)}</span>`).join("\n");
+    $("#hxAppName").textContent = hx.app; $("#hxAppSub").textContent = hx.appSub;
+    $("#hxDocs").innerHTML = hx.docs.map(([n, d]) => `<div><i></i><span><b>${esc(n)}</b><small>${esc(d)}</small></span></div>`).join("");
+    $("#hxBook").textContent = hx.book;
+    $("#hxShip").innerHTML = hx.ship.map((x) => `<span>✓ ${esc(x)}</span>`).join("");
+    paint(lastP);
   }
+  let lastP = 0;
+  function paint(p) {
+    lastP = p;
+    const k = p * 4, st = Math.min(3, Math.floor(k)), f = clamp(k - st);
+    demo.dataset.s = st;
+    $$("#hxSteps li").forEach((li, i) => { li.classList.toggle("on", i === st); li.firstChild.style.setProperty("--f", i < st ? 1 : i === st ? f : 0); });
+    const say = hx.say, n = st > 0 ? say.length : Math.round(say.length * clamp(0.18 + f * 1.25));
+    $("#hxSay").innerHTML = esc(say.slice(0, n)) + (n < say.length ? '<span class="caret"></span>' : "");
+    $$("#hxPlan li").forEach((li, i, a) => li.classList.toggle("in", st > 1 || (st === 1 && f * 1.3 > i / a.length)));
+    $("#hxApprove").classList.toggle("go", st > 1 || (st === 1 && f > 0.82));
+    $$("#hxCode span").forEach((sp, i, a) => sp.classList.toggle("in", st > 2 || (st === 2 && f * 1.2 > i / a.length)));
+    $$("#hxTree span").forEach((sp, i, a) => sp.classList.toggle("in", st > 2 || (st === 2 && f * 1.4 > i / a.length)));
+    $$("#hxShip span").forEach((sp, i, a) => sp.classList.toggle("in", st === 3 && f * 1.5 > i / a.length));
+  }
+  const pinned = () => !still && innerWidth > 980;
   function filmScroll() {
-    if (noFilm) return;
-    const r = film.getBoundingClientRect(), p = clamp(-r.top / (film.offsetHeight - innerHeight));
-    const v = { out: eo(seg(p, 0, 0.14)), wipe: eio(seg(p, 0.05, 0.3)), pat: seg(p, 0.22, 0.34), head: eo(seg(p, 0.26, 0.4)), gather: eio(seg(p, 0.3, 0.68)) };
-    for (const k in v) stage.style.setProperty("--" + k, v[k].toFixed(4));
-    $("#hero").style.pointerEvents = v.out > 0.5 ? "none" : "";
-    $("#flock").style.pointerEvents = v.gather > 0.9 ? "auto" : "none";
+    if (!pinned()) return;
+    const r = film.getBoundingClientRect();
+    paint(clamp(-r.top / (film.offsetHeight - innerHeight)) * 0.999);
+    $("#scrollhint").style.opacity = r.top < -40 ? 0 : 1;
   }
+  let auto = 0;
+  setInterval(() => { if (pinned()) return; auto = still ? 0.6 : (auto + 0.01) % 1; paint(auto); }, 120);
+  $("#hxSteps").addEventListener("click", (e) => { const li = e.target.closest("li"); if (!li) return; if (pinned()) { const top = film.offsetTop + (film.offsetHeight - innerHeight) * (+li.dataset.i + 0.55) / 4; scrollTo({ top, behavior: "smooth" }); } else { auto = (+li.dataset.i + 0.5) / 4; paint(auto); } });
+  function layoutFilm() { filmScroll(); }
   addEventListener("resize", layoutFilm);
   addEventListener("scroll", filmScroll, { passive: true });
 
