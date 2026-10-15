@@ -46,6 +46,7 @@
     renderCtas(u);
     renderGh(u);
     renderFlag(u);
+    buildJourney(u);
     const chips = apps.map((a) => `<a href="#project/${a.pid}">${a.icon ? `<img src="${a.icon}" alt="">` : "<i>RB</i>"}${esc(a.name)}</a>`).join("");
     $("#marquee").innerHTML = chips + chips;
 
@@ -74,7 +75,6 @@
     $("#skillgrid").innerHTML = SKILLS.map((g) => `<div class="skill reveal"><h3>${esc(g[lang])}</h3><div>${g.items.map((i) => `<span>${esc(i)}</span>`).join("")}</div></div>`).join("");
     $("#archiveList").innerHTML = EARLIER.map(([n, c, d]) => `<div class="arc reveal"><b>${esc(n)}</b><small>${esc(t(c))}</small><p>${esc(t(d))}</p></div>`).join("");
     observe();
-    layoutFilm();
     if (modal.classList.contains("open")) route();
   }
 
@@ -332,19 +332,98 @@
     $$("#hxTree span").forEach((sp, i, a) => sp.classList.toggle("in", st > 2 || (st === 2 && f * 1.4 > i / a.length)));
     $$("#hxShip span").forEach((sp, i, a) => sp.classList.toggle("in", st === 3 && f * 1.5 > i / a.length));
   }
-  const pinned = () => !still && innerWidth > 980;
-  function filmScroll() {
-    if (!pinned()) return;
-    const r = film.getBoundingClientRect();
-    paint(clamp(-r.top / (film.offsetHeight - innerHeight)) * 0.999);
-    $("#scrollhint").style.opacity = r.top < -40 ? 0 : 1;
+  // journey: a 3D camera flies through the scene as you scroll
+  const world = $("#world"), stage = $("#stage");
+  const smooth = (x) => x * x * (3 - 2 * x);
+  const seg = (p, a, b) => clamp((p - a) / (b - a));
+  const CHIPS = [["Flutter", ""], ["Python", ""], ["Angular", ""], ["Claude", "ai"], ["GPT", "ai"], ["Gemini", "ai"], ["React", ""], ["PostgreSQL", ""], ["DeepSeek", "ai"], ["✓ APK", "ok"], ["✓ IPA", "ok"], ["Node.js", ""], ["Mistral", "ai"], ["Docker", ""], ["Redis", ""], ["✓ deployed", "ok"], ["Strapi", ""], ["Next.js", ""]];
+  const CH = [0, 0.14, 0.58, 0.9];
+  let J = [], K = [], cur = 0, tgt = 0, demoItem, raf = 0;
+  if (still) root.classList.add("no-film");
+  function buildJourney(u) {
+    const r = u.jr;
+    $("#jProjT").innerHTML = r.projT; $("#jProjS").textContent = r.projS;
+    $("#jEndT").innerHTML = r.endT; $("#jEndS").textContent = r.endS;
+    $("#jEndMsg").href = WA; $("#jEndMsg").innerHTML = ICON.wa + esc(u.message); $("#jEndWork").textContent = r.work;
+    $("#jHud").innerHTML = r.chapters.map((c, i) => `<button data-i="${i}"><i></i><span>${esc(c)}</span></button>`).join("");
+    $$(".j-chip,.j-card").forEach((e) => e.remove());
+    const frag = document.createDocumentFragment();
+    CHIPS.forEach(([txt, cls]) => { const d = document.createElement("div"); d.className = `j j-chip ${cls}`; d.textContent = txt; frag.appendChild(d); });
+    const cards = [];
+    PROJECTS.forEach((p) => { (p.images || []).slice(0, p.phone ? 2 : 1).forEach((src) => cards.push([p, src])); });
+    cards.slice(0, 22).forEach(([p, src]) => { const d = document.createElement("a"); d.className = `j j-card${p.phone ? " ph" : ""}`; d.href = `#project/${p.id}`; d.innerHTML = `<img src="${src}" alt="" loading="lazy"><span>${esc(p.name)}<small>${esc(t(p.industry))}</small></span>`; frag.appendChild(d); });
+    world.appendChild(frag);
+    layoutJourney();
   }
-  let auto = 0;
-  setInterval(() => { if (pinned()) return; auto = still ? 0.6 : (auto + 0.01) % 1; paint(auto); }, 120);
-  $("#hxSteps").addEventListener("click", (e) => { const li = e.target.closest("li"); if (!li) return; if (pinned()) { const top = film.offsetTop + (film.offsetHeight - innerHeight) * (+li.dataset.i + 0.55) / 4; scrollTo({ top, behavior: "smooth" }); } else { auto = (+li.dataset.i + 0.5) / 4; paint(auto); } });
-  function layoutFilm() { filmScroll(); }
+  function layoutJourney() {
+    if (still) return;
+    const W = stage.clientWidth, H = stage.clientHeight, mob = W < 760;
+    const dx = mob ? 0 : W * 0.17, ix = mob ? 0 : -W * 0.2;
+    J = [];
+    const add = (el, x, y, z, extra = {}) => J.push({ el, x, y, z, ...extra });
+    add($("#jIntro"), ix, mob ? -20 : 0, 0);
+    demoItem = { el: $("#jDemo"), x: dx, y: mob ? 10 : 0, z: -1700, demo: 1, far: mob ? 1250 : 2300 }; J.push(demoItem);
+    if (!mob) $("#jIntro").style.width = "min(560px,40vw)";
+    let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+    $$(".j-chip").forEach((el, i) => {
+      let x, y; do { x = (rnd() - 0.5) * W * 1.5; y = (rnd() - 0.5) * H * 1.3; } while (Math.abs(x) < W * 0.22 && Math.abs(y) < H * 0.3);
+      add(el, x, y, (mob ? -1000 : -350) - i * 330, { ry: (rnd() - 0.5) * 50, rx: (rnd() - 0.5) * 30 });
+    });
+    add($("#jProj"), 0, 0, -3300);
+    const R = mob ? W * 0.62 : Math.min(W * 0.42, H * 0.62);
+    $$(".j-card").forEach((el, i) => add(el, 0, 0, -3900 - i * 170, { th: i * 1.05, R: R * (1 + (i % 3) * 0.08), card: 1 }));
+    const lastZ = 3900 + ($$(".j-card").length - 1) * 170;
+    add($("#jEnd"), 0, 0, -(lastZ + 900));
+    const endZ = lastZ + 900 - 170;
+    K = [[0, 0, 0], [0.06, 260, 0], [0.16, 1540, -dx], [0.5, 1640, -dx], [0.6, 3300 - 260, 0], [0.64, 3420, 0], [0.88, endZ - 260, 0], [0.95, endZ, 0], [1, endZ + 30, 0]];
+    tgt = progress(); cur = tgt; render();
+  }
+  function cam(p) {
+    for (let i = 1; i < K.length; i++) if (p <= K[i][0]) { const a = K[i - 1], b = K[i], f = smooth((p - a[0]) / (b[0] - a[0])); return [a[1] + (b[1] - a[1]) * f, a[2] + (b[2] - a[2]) * f]; }
+    return [K[K.length - 1][1], K[K.length - 1][2]];
+  }
+  const progress = () => { const r = film.getBoundingClientRect(); return clamp(-r.top / (film.offsetHeight - innerHeight)); };
+  function render() {
+    const [cz, cx] = cam(cur), spin = (cz - 3300) * 0.00032, sway = Math.sin(cur * 9) * 6;
+    for (const it of J) {
+      const d = it.z + cz;
+      const far = it.far || 1300;
+      let o = d > 0 ? 1 - d / 420 : d < -far ? 1 - (-far - d) / 700 : 1;
+      o = clamp(o);
+      it.el.style.opacity = o.toFixed(3);
+      it.el.style.visibility = o <= 0.01 ? "hidden" : "visible";
+      it.el.style.pointerEvents = o > 0.6 ? "auto" : "none";
+      if (o <= 0.01) continue;
+      let x = it.x, y = it.y, rot = `rotateY(${it.ry || 0}deg) rotateX(${it.rx || 0}deg)`;
+      if (it.card) {
+        const th = it.th + spin; x = Math.cos(th) * it.R * 1.25; y = Math.sin(th) * it.R * 0.78;
+        rot = `rotateY(${-Math.cos(th) * 32}deg) rotateX(${Math.sin(th) * 22}deg)`;
+      } else if (it.demo) {
+        const arrive = seg(cur, 0.04, 0.16), leave = seg(cur, 0.5, 0.58);
+        rot = `rotateY(${(1 - arrive) * -34 + leave * 26}deg) rotateX(${(1 - arrive) * 14}deg) rotateZ(${(1 - arrive) * -4}deg)`;
+      }
+      it.el.style.transform = `translate(-50%,-50%) translate3d(${(x + cx).toFixed(1)}px,${(y + sway).toFixed(1)}px,${d.toFixed(1)}px) ${rot}`;
+    }
+    paint(seg(cur, 0.16, 0.5) * 0.999);
+    const ch = CH.reduce((a, v, i) => (cur >= v - 0.001 ? i : a), 0);
+    $$("#jHud button").forEach((b, i) => b.classList.toggle("on", i === ch));
+    stage.style.setProperty("--jp", cur.toFixed(4));
+    $("#scrollhint").style.opacity = cur > 0.02 ? 0 : 1;
+  }
+  function tick() {
+    cur += (tgt - cur) * 0.09;
+    if (Math.abs(tgt - cur) < 0.0004) cur = tgt;
+    render();
+    raf = cur === tgt ? 0 : requestAnimationFrame(tick);
+  }
+  function filmScroll() { if (still) return; tgt = progress(); if (!raf) raf = requestAnimationFrame(tick); }
+  $("#jHud").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; const p = [0, 0.3, 0.75, 1][+b.dataset.i]; scrollTo({ top: film.offsetTop + p * (film.offsetHeight - innerHeight), behavior: "smooth" }); });
+  $("#hxSteps").addEventListener("click", (e) => { const li = e.target.closest("li"); if (!li || still) return; const p = 0.16 + (+li.dataset.i + 0.5) / 4 * 0.34; scrollTo({ top: film.offsetTop + p * (film.offsetHeight - innerHeight), behavior: "smooth" }); });
+  $("#ctaWork").addEventListener("click", (e) => { if (still) return; e.preventDefault(); scrollTo({ top: film.offsetTop + 0.2 * (film.offsetHeight - innerHeight), behavior: "smooth" }); });
+  function layoutFilm() { layoutJourney(); }
   addEventListener("resize", layoutFilm);
   addEventListener("scroll", filmScroll, { passive: true });
+  if (still) paint(0.6);
 
   // magnetic primary buttons
   if (matchMedia("(hover: hover)").matches) document.addEventListener("pointermove", (e) => {

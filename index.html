@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700;800&family=Montserrat:wght@400;500;600;700&family=Alexandria:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=15">
 <script>
   (function(){var q=new URLSearchParams(location.search),l=q.get("lang")||localStorage.getItem("lang")||"en",t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
   document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.documentElement.dataset.theme=t;})();
@@ -40,8 +40,8 @@
 <main id="top">
   <section class="film" id="film">
     <div class="stage" id="stage">
-      <div class="hx">
-        <div class="hx-copy">
+      <div class="world" id="world">
+        <div class="j j-intro" id="jIntro">
           <a class="hx-me" href="#experience"><img src="assets/omar.jpg" alt="Omar Ahmed Amin"><span><b id="hxName"></b><small id="eyebrow"></small></span></a>
           <h1 class="hx-title" id="hxTitle"></h1>
           <p class="hx-lead" id="lead"></p>
@@ -50,9 +50,9 @@
             <a class="store" id="ctaMail" href="#"></a>
             <a class="store" id="ctaLi" href="#" target="_blank" rel="noopener">LinkedIn</a>
           </div>
-          <ol class="hx-steps" id="hxSteps"></ol>
         </div>
-        <div class="hx-demo" id="hxDemo" data-s="0">
+        <div class="j j-demo" id="jDemo">
+          <div class="hx-demo" id="hxDemo" data-s="0">
           <div class="win">
             <div class="bz"><i></i><i></i><i></i><span>nubni.com</span><b class="hx-model" id="hxModel"></b></div>
             <div class="panes">
@@ -62,8 +62,15 @@
               <div class="pane p3"><div class="ph"><div class="ph-top"><b id="hxAppName"></b><small id="hxAppSub"></small></div><div class="ph-list" id="hxDocs"></div><div class="ph-btn" id="hxBook"></div></div><div class="ship" id="hxShip"></div></div>
             </div>
           </div>
+          </div>
+          <ol class="hx-steps" id="hxSteps"></ol>
         </div>
+        <div class="j j-title" id="jProj"><h2 id="jProjT"></h2><p id="jProjS"></p></div>
+        <div class="j j-title j-end" id="jEnd"><h2 id="jEndT"></h2><p id="jEndS"></p><div class="cta"><a class="store dark" id="jEndMsg" target="_blank" rel="noopener"></a><a class="store" href="#work" id="jEndWork"></a></div></div>
       </div>
+      <div class="j-fog" aria-hidden="true"></div>
+      <nav class="j-hud" id="jHud" aria-label="Journey chapters"></nav>
+      <div class="j-bar" id="jBar"></div>
       <div class="scrollhint" id="scrollhint"><span></span></div>
     </div>
   </section>
@@ -140,7 +147,7 @@
 </div>
 <div class="lightbox" id="lightbox"><img alt=""></div>
 
-<script src="data.js?v=13"></script>
-<script src="app.js?v=13"></script>
+<script src="data.js?v=15"></script>
+<script src="app.js?v=15"></script>
 </body>
 </html>
