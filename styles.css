@@ -139,6 +139,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:30px;border-t
 .gallery.phones{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .gallery img{border-radius:14px;border:1px solid var(--line);cursor:zoom-in;transition:transform .3s}
 .gallery img:hover{transform:scale(1.02)}
+.gallery:not(.phones) img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;background:#fff}
 .pcs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
 .pcs div{padding:18px;border-radius:16px;border:1px solid var(--line);background:var(--card)}
 .pcs h4{color:var(--a2);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
