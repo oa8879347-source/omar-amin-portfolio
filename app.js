@@ -197,7 +197,7 @@
   }
 
   // GitHub-style profile
-  const LANGC = { Flutter: "#00B4AB", Dart: "#00B4AB", "React Native": "#61dafb", "Next.js": "#24292f", Android: "#3DDC84", React: "#61dafb", "Node.js": "#3c873a", TypeScript: "#3178c6", PHP: "#4F5D95", Laravel: "#f05340", Python: "#3572A5", PostgreSQL: "#336791", MySQL: "#00758f", Firebase: "#FFCA28", Docker: "#2496ED", Strapi: "#8e75ff", Redis: "#DC382D" };
+  const LANGC = { Flutter: "#00B4AB", Dart: "#00B4AB", "React Native": "#61dafb", "Next.js": "#24292f", Android: "#3DDC84", React: "#61dafb", "Node.js": "#3c873a", TypeScript: "#3178c6", PHP: "#4F5D95", Laravel: "#f05340", Python: "#3572A5", Django: "#0C4B33", Angular: "#dd0031", PostgreSQL: "#336791", MySQL: "#00758f", Firebase: "#FFCA28", Docker: "#2496ED", Strapi: "#8e75ff", Redis: "#DC382D" };
   const ym = (s) => s === "now" ? 2026 * 12 + 9 : (+s.slice(0, 4)) * 12 + (+s.slice(5, 7) - 1);
   function renderGh(u) {
     const g = u.gh, live = liveApps().length;
@@ -227,7 +227,7 @@
         <h3>${esc(t(PROFILE.name))}</h3><div class="handle mono">${g.handle}</div>
         <p class="bio">${esc(g.bio)}</p>
         <a class="btn" href="${WA}" target="_blank" rel="noopener">${ICON.wa}${esc(g.follow)}</a>
-        <div class="gh-counts"><span><b>${PROJECTS.length}</b> ${g.repos}</span><span><b>${live}</b> ${g.live}</span><span><b>8+</b> ${g.years}</span></div>
+        <div class="gh-counts"><span><b>120+</b> ${g.repos}</span><span><b>${live}</b> ${g.live}</span><span><b>8+</b> ${g.years}</span></div>
         <ul class="gh-meta"><li>${ICON.org}CodeWealth</li><li>${ICON.pin}${lang === "ar" ? "القاهرة، مصر" : "Cairo, Egypt"}</li><li>${ICON.link}<a href="${MAIL}">${esc(PROFILE.email)}</a></li><li>${ICON.link}<a href="${PROFILE.linkedin}" target="_blank" rel="noopener">linkedin/omar-amin</a></li></ul>
       </aside>
       <div class="gh-main">
