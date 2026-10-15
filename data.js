@@ -14,7 +14,7 @@ window.PROFILE = {
 window.UI = {
   en: {
     dir: "ltr", other: "العربية", nav: ["Work", "How I work", "Experience", "Skills", "Contact"], cv: "Download CV",
-    eyebrow: "CTO at CodeWealth · Founder of Nubni",
+    eyebrow: "CTO at CodeWealth · Built Nubni solo",
     h1: "I take products from a client meeting to the App Store, and keep them running.",
     lead: "I'm Omar. I designed and built Nubni alone over two years: tell it what you need by voice or text, and it plans, codes, builds and deploys the app. It sits on top of 250+ software projects I've delivered since 2018.",
     hx: { title: "Say what you want to build. <em>Nubni</em> writes it.", model: "Claude · GPT · Gemini", steps: ["Say it", "Approve the plan", "Code streams in", "Ship it"],
@@ -49,7 +49,7 @@ window.UI = {
   },
   ar: {
     dir: "rtl", other: "English", nav: ["أعمالي", "طريقة عملي", "الخبرات", "المهارات", "تواصل"], cv: "تحميل السيرة الذاتية",
-    eyebrow: "مدير تقني في CodeWealth · مؤسس Nubni",
+    eyebrow: "مدير تقني في CodeWealth · طوّرت Nubni بمفردي",
     h1: "أنقل المنتج من أول اجتماع مع العميل إلى متجر التطبيقات، وأحافظ على تشغيله.",
     lead: "أنا عمر. صممت وبنيت Nubni بمفردي على مدار عامين: أخبره بما تحتاجه بصوتك أو بالنص، فيخطط ويكتب الكود ويبني التطبيق وينشره. وخلفه أكثر من 250 مشروعًا برمجيًا نفذتها منذ 2018.",
     hx: { title: "قل ما تريد بناءه، <em>Nubni</em> يكتبه لك.", model: "Claude · GPT · Gemini", steps: ["قلها", "اعتمد الخطة", "الكود يُكتب", "انشره"],
@@ -86,7 +86,7 @@ window.UI = {
 
 window.EXPERIENCE = [
   {
-    role: { en: "Founder & Sole Engineer", ar: "المؤسس والمطوّر الوحيد" },
+    role: { en: "Creator & Sole Engineer", ar: "المطوّر والمهندس الوحيد" },
     from: "2024-10", to: "now", load: 1, hash: "n0b41a1", org: "Nubni", place: { en: "Egypt", ar: "مصر" }, date: { en: "2024 — Present", ar: "2024 — حتى الآن" }, link: "https://nubni.com",
     points: {
       en: [
@@ -185,7 +185,7 @@ window.PROJECTS = [
     problem: { en: "Turning an idea into a real app still needs a team, weeks of setup and separate tools for code, builds, hosting and AI.", ar: "تحويل فكرة إلى تطبيق حقيقي ما زال يحتاج فريقًا وأسابيع من الإعداد وأدوات منفصلة للكود والبناء والاستضافة والذكاء الاصطناعي." },
     built: { en: "Voice input in Arabic and English, a step-by-step wizard, and an AI planner whose plan you approve before code is generated with streamed output. Multi-model chat with attachments, bring-your-own keys, MCP servers and skills. Monaco code and endpoints editor, GitHub import and sync, APK and IPA builds, virtual Android, iOS and browser devices, cloud servers, domains and hosting. Teams with roles and permissions, plans with AI-token metering, Paymob and Vodafone Cash payments, support chat, and an admin dashboard for approvals, plans, AI models and audit.", ar: "إدخال صوتي بالعربية والإنجليزية، ومعالج خطوات، ومخطِّط ذكي تعتمد خطته قبل توليد الكود مع بث النتيجة لحظيًا. محادثة مع نماذج متعددة ومرفقات، ومفاتيحك الخاصة، وخوادم MCP والمهارات. محرر Monaco للأكواد والـ Endpoints، واستيراد ومزامنة GitHub، وبناء APK و IPA، وأجهزة Android و iOS ومتصفح افتراضية، وسيرفرات سحابية ودومينات واستضافة. فرق عمل بأدوار وصلاحيات، وباقات بحساب استهلاك التوكنز، ودفع عبر Paymob وفودافون كاش، ودعم فني بالمحادثة، ولوحة إدارة للموافقات والباقات والنماذج والتدقيق." },
     outcome: { en: "Live at nubni.com with Free, Standard, Pro and Enterprise plans. Generates Flutter, React, Angular, Vue, Strapi and Node.js projects, and users own all generated code.", ar: "تعمل على nubni.com بباقات مجانية و Standard و Pro و Enterprise. تولّد مشاريع Flutter و React و Angular و Vue و Strapi و Node.js، والكود المولَّد ملك للمستخدم." },
-    role: { en: "Founder and sole engineer: product, design, backend, frontend, admin, DevOps", ar: "المؤسس والمطوّر الوحيد: المنتج والتصميم والباك إند والواجهة والإدارة و DevOps" },
+    role: { en: "Built solo, end to end: product, design, backend, frontend, admin, DevOps", ar: "بناء فردي بالكامل: المنتج والتصميم والباك إند والواجهة والإدارة و DevOps" },
     resp: { en: ["Product vision, pricing and roadmap", "Python backend, AI orchestration and streaming", "Angular web app and admin dashboard", "Build pipeline, virtual devices and hosting", "Security, payments and operations"], ar: ["رؤية المنتج والتسعير وخطة التطوير", "باك إند Python وتنسيق نماذج الذكاء الاصطناعي والبث اللحظي", "تطبيق الويب ولوحة الإدارة بـ Angular", "خط البناء والأجهزة الافتراضية والاستضافة", "الأمان والمدفوعات والتشغيل"] },
     deliv: { en: ["Landing website", "Web app", "Admin dashboard", "Backend & AI engine", "Build & deploy pipeline"], ar: ["الموقع التعريفي", "تطبيق الويب", "لوحة الإدارة", "الباك إند ومحرك الذكاء الاصطناعي", "خط البناء والنشر"] },
     stack: ["Python", "Angular", "PostgreSQL", "Redis", "Docker"],
