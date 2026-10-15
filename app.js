@@ -278,7 +278,7 @@
     stage.style.setProperty("--dx", ax + ar.width / 2 + "px"); stage.style.setProperty("--dy", ay + ar.height / 2 + "px");
     stage.style.setProperty("--dsz", Math.ceil(Math.hypot(W, H) * 2.1) + "px");
     const items = $$("#flock a"), n = items.length, mob = W < 700;
-    const cols = mob ? 4 : 7, sz = mob ? 56 : 78, gx = mob ? 30 : 62, gy = mob ? 44 : 54;
+    const cols = mob ? 4 : 7, sz = mob ? 56 : 78, gx = mob ? 30 : 62, gy = mob ? 50 : 76;
     const rows = Math.ceil(n / cols), top = H * (mob ? 0.5 : 0.48), base = mob ? 46 : 58;
     items.forEach((a, i) => {
       const r = Math.floor(i / cols), inRow = Math.min(cols, n - r * cols), c = i % cols;
