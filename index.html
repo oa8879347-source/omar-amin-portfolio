@@ -1,110 +1,126 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Omar Ahmed Amin — CTO & Senior Software Engineer | Portfolio</title>
-<meta name="description" content="Portfolio of Omar Ahmed Amin, CTO at CodeWealth and Senior Software Engineer. Projects, screenshots, roles and responsibilities.">
+<title>Omar Ahmed Amin — CTO & Senior Software Engineer</title>
+<meta name="description" content="Omar Ahmed Amin: CTO at CodeWealth, Senior Software Engineer and DevOps. 15 live apps on the App Store and Google Play.">
 <meta property="og:title" content="Omar Ahmed Amin — CTO & Senior Software Engineer">
-<meta property="og:description" content="15+ led platforms across FinTech, ERP, Healthcare, Telecom and Logistics.">
+<meta property="og:description" content="15 live apps, 20+ projects led, 8+ years. English & Arabic.">
 <meta property="og:image" content="assets/omar.jpg">
+<meta name="theme-color" content="#F5EEE1">
 <link rel="icon" href="assets/omar.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700;800&family=Montserrat:wght@400;500;600;700&family=Alexandria:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=6">
+<script>
+  (function(){var q=new URLSearchParams(location.search),l=q.get("lang")||localStorage.getItem("lang")||"en",t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.documentElement.dataset.theme=t;})();
+</script>
 </head>
 <body>
-<div class="bg"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span><div class="grid"></div></div>
-<div class="progress" id="progress"></div>
+<div class="grain" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#top"><span>OA</span>Omar Amin</a>
-  <nav>
-    <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#earlier">Archive</a>
-    <a class="btn small" href="Omar_Ahmed_Amin_CV_2026.pdf" download>Download CV</a>
-  </nav>
+  <a class="logo" href="#top" aria-label="Home"><span class="mark">o</span><span class="word">omar<em>.</em></span></a>
+  <nav class="links" id="navlinks"></nav>
+  <div class="tools">
+    <button class="tbtn" id="motion" aria-label="Pause motion" title="Pause motion"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button>
+    <button class="tbtn" id="theme" aria-label="Toggle theme"><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
+    <button class="lang" id="lang"></button>
+    <a class="btn small" id="cvbtn" href="Omar_Ahmed_Amin_CV_2026.pdf" download></a>
+  </div>
 </header>
 
 <main id="top">
   <section class="hero">
-    <div class="hero-text reveal">
-      <p class="eyebrow">Available for leadership & senior engineering roles</p>
-      <h1>Omar Ahmed Amin</h1>
-      <p class="typed"><span id="typed"></span><i class="caret"></i></p>
-      <p class="lead">I lead product engineering end to end: <b>FRS/SRS and planning</b>, <b>architecture and coding</b>, <b>team leadership</b>, and <b>DevOps and production operations</b>. 8+ years shipping mobile, web, ERP and SaaS platforms for clients in Egypt, Saudi Arabia, the UAE, Libya and Spain.</p>
+    <span class="ring r1" aria-hidden="true"></span><span class="ring r2" aria-hidden="true"></span>
+    <div class="hero-copy">
+      <p class="pill" id="eyebrow"></p>
+      <h1 class="wordmark" id="wordmark"></h1>
+      <p class="statement" id="h1"></p>
+      <p class="lead" id="lead"></p>
       <div class="cta">
-        <a class="btn" href="#work">Explore projects</a>
-        <a class="btn ghost" id="mail" href="#">Contact me</a>
-        <a class="btn ghost" id="li" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="store dark" href="#live" id="ctaWork"></a>
+        <a class="store" id="ctaMail" href="#"></a>
+        <a class="store" id="ctaLi" href="#" target="_blank" rel="noopener">LinkedIn</a>
       </div>
+      <p class="based" id="based"></p>
     </div>
-    <div class="hero-photo reveal">
-      <div class="ring"></div>
-      <img src="assets/omar.jpg" alt="Omar Ahmed Amin">
-      <div class="badge b1">CTO · CodeWealth</div>
-      <div class="badge b2">DevOps · Docker · Linux</div>
-      <div class="badge b3">Flutter · Node · Python · PHP</div>
+    <div class="hero-art">
+      <div class="arch"><img src="assets/omar.jpg" alt="Omar Ahmed Amin"></div>
+      <div class="floaters" id="floaters" aria-hidden="true"></div>
+      <div class="sticker">CTO<br><small>CodeWealth</small></div>
     </div>
   </section>
 
-  <section class="stats reveal" id="stats"></section>
+  <section class="stats" id="stats"></section>
 
-  <section class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></section>
+  <div class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></div>
+
+  <section id="live" class="section">
+    <div class="head reveal"><span class="num">01</span><h2 id="liveTitle"></h2><p id="liveSub"></p></div>
+    <div class="apps" id="apps"></div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="sticky">
+      <div class="panel">
+        <div class="pattern" aria-hidden="true"></div>
+        <div class="phone"><div class="notch"></div><div class="screens" id="screens"></div></div>
+      </div>
+      <div class="story">
+        <span class="num">02</span>
+        <h2 id="procTitle"></h2>
+        <p class="sub" id="procSub"></p>
+        <ol class="steps" id="steps"></ol>
+      </div>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+    </div>
+  </section>
 
   <section id="work" class="section">
-    <div class="head reveal">
-      <p class="eyebrow">Selected work</p>
-      <h2>Projects I led, built & deployed</h2>
-      <p class="muted">Open any project for screenshots, scope, my role, responsibilities and stack. Each project has its own shareable link.</p>
-    </div>
+    <div class="head reveal"><span class="num">03</span><h2 id="workTitle"></h2><p id="workSub"></p></div>
     <div class="filters reveal" id="filters"></div>
     <div class="cards" id="cards"></div>
   </section>
 
   <section id="experience" class="section">
-    <div class="head reveal"><p class="eyebrow">Career</p><h2>Experience</h2></div>
-    <div class="timeline" id="timeline"></div>
+    <div class="head reveal"><span class="num">04</span><h2 id="expTitle"></h2></div>
+    <div class="jobs" id="jobs"></div>
   </section>
 
   <section id="skills" class="section">
-    <div class="head reveal"><p class="eyebrow">Toolbox</p><h2>Skills & technologies</h2></div>
+    <div class="head reveal"><span class="num">05</span><h2 id="skillsTitle"></h2></div>
     <div class="skills" id="skillgrid"></div>
   </section>
 
-  <section id="devops" class="section">
-    <div class="head reveal"><p class="eyebrow">Operations</p><h2>How I run production</h2></div>
-    <div class="ops">
-      <div class="op reveal"><b>01</b><h3>Containerize & deploy</h3><p>I package every service in Docker and deploy CodeWealth projects to production servers with repeatable releases.</p></div>
-      <div class="op reveal"><b>02</b><h3>Monitor health</h3><p>Status checks and health scripts watch uptime, resources and services on every server.</p></div>
-      <div class="op reveal"><b>03</b><h3>Secure</h3><p>Firewall rules, blocking abusive IPs, access control and regular security reviews.</p></div>
-      <div class="op reveal"><b>04</b><h3>Self-heal</h3><p>Recovery scripts bring services back automatically after downtime, such as payment delays or provider infrastructure updates.</p></div>
-    </div>
+  <section id="archive" class="section">
+    <div class="head reveal"><span class="num">06</span><h2 id="archTitle"></h2><p id="archSub"></p></div>
+    <div class="archive" id="archiveList"></div>
   </section>
 
-  <section id="earlier" class="section">
-    <div class="head reveal"><p class="eyebrow">Archive</p><h2>Earlier projects (2018 — 2025)</h2></div>
-    <div class="archive" id="archive"></div>
-  </section>
-
-  <section class="section contact reveal">
-    <h2>Let's build something significant.</h2>
-    <p class="muted" id="contactline"></p>
-    <div class="cta center"><a class="btn" id="mail2" href="#">Email me</a><a class="btn ghost" href="Omar_Ahmed_Amin_CV_2026.pdf" download>Download CV (PDF)</a></div>
+  <section id="contact" class="contact reveal">
+    <div class="pattern" aria-hidden="true"></div>
+    <h2 id="contactTitle"></h2>
+    <p id="contactSub"></p>
+    <div class="cta center"><a class="store light" id="mail2" href="#"></a><a class="store ghost" id="cv2" href="Omar_Ahmed_Amin_CV_2026.pdf" download></a></div>
+    <p class="contactline" id="contactline"></p>
   </section>
 </main>
 
-<footer>© <span id="yr"></span> Omar Ahmed Amin · Giza, Egypt</footer>
+<footer><span id="footer"></span> · <span id="yr"></span></footer>
 
 <div class="modal" id="modal" aria-hidden="true">
-  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="m-title">
-    <button class="close" id="close" aria-label="Close">×</button>
+  <div class="sheet" role="dialog" aria-modal="true">
+    <button class="close" id="close" aria-label="Close">&times;</button>
     <div id="m-body"></div>
   </div>
 </div>
 <div class="lightbox" id="lightbox"><img alt=""></div>
 
-<script src="data.js?v=3"></script>
-<script src="app.js?v=3"></script>
+<script src="data.js?v=6"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>
