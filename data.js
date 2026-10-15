@@ -193,7 +193,7 @@ window.PROJECTS = [
     links: [{ en: "Visit nubni.com", ar: "زيارة nubni.com", url: "https://nubni.com" }, { en: "Plans", ar: "الباقات", url: "https://nubni.com/plans" }],
   },
   {
-    id: "rbm", name: "Red Bull MOBILE Saudi", org: "Sigma", status: "live", phone: true, initials: "RB", color: "#d71f3f",
+    id: "rbm", name: "Red Bull MOBILE Saudi", org: "Sigma", status: "live", phone: true, logo: "assets/apps/rbm-icon.jpg",
     industry: { en: "Telecom", ar: "اتصالات" }, markets: { en: "Saudi Arabia", ar: "السعودية" },
     summary: { en: "Self-care app for Red Bull MOBILE subscribers in Saudi Arabia: plans, add-ons, recharge and Giga Coins rewards.", ar: "تطبيق الخدمة الذاتية لمشتركي Red Bull MOBILE في السعودية: الباقات والإضافات والشحن ومكافآت Giga Coins." },
     problem: { en: "Subscribers needed one place to manage their line, without calling support.", ar: "احتاج المشتركون مكانًا واحدًا لإدارة خطوطهم بدون الاتصال بخدمة العملاء." },
@@ -203,7 +203,7 @@ window.PROJECTS = [
     resp: { en: ["Plans, add-ons, rewards and retention features", "Stability and performance releases", "Sprint work with QA and backend teams"], ar: ["ميزات الباقات والإضافات والمكافآت والاحتفاظ بالعملاء", "إصدارات الاستقرار والأداء", "العمل في Sprints مع فرق الاختبار والباك إند"] },
     deliv: { en: ["Android app", "iOS app"], ar: ["تطبيق Android", "تطبيق iOS"] },
     stack: ["Android", "iOS", "REST APIs", "Analytics"],
-    apps: [{ name: "Red Bull MOBILE Saudi", icon: null, ios: "https://apps.apple.com/eg/app/red-bull-mobile-saudi/id1600014978", android: "https://play.google.com/store/apps/details?id=com.mediapark.rbm&hl=en" }],
+    apps: [{ name: "Red Bull MOBILE Saudi", icon: "assets/apps/rbm-icon.jpg", ios: "https://apps.apple.com/eg/app/red-bull-mobile-saudi/id1600014978", android: "https://play.google.com/store/apps/details?id=com.mediapark.rbm&hl=en" }],
     images: ["assets/rbm/rbm-1.jpg", "assets/rbm/rbm-2.jpg", "assets/rbm/rbm-3.jpg", "assets/rbm/rbm-4.jpg"],
   },
   {
