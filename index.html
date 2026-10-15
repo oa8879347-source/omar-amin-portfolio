@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omar Ahmed Amin — CTO & Senior Software Engineer | Portfolio</title>
+<meta name="description" content="Portfolio of Omar Ahmed Amin, CTO at CodeWealth and Senior Software Engineer. Projects, screenshots, roles and responsibilities.">
+<meta property="og:title" content="Omar Ahmed Amin — CTO & Senior Software Engineer">
+<meta property="og:description" content="15+ led platforms across FinTech, ERP, Healthcare, Telecom and Logistics.">
+<meta property="og:image" content="assets/omar.jpg">
+<link rel="icon" href="assets/omar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span><div class="grid"></div></div>
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top"><span>OA</span>Omar Amin</a>
+  <nav>
+    <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#earlier">Archive</a>
+    <a class="btn small" href="Omar_Ahmed_Amin_CV_2026.pdf" download>Download CV</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-text reveal">
+      <p class="eyebrow">Available for leadership & senior engineering roles</p>
+      <h1>Omar Ahmed Amin</h1>
+      <p class="typed"><span id="typed"></span><i class="caret"></i></p>
+      <p class="lead">I lead product engineering end to end: <b>FRS/SRS and planning</b>, <b>architecture and coding</b>, <b>team leadership</b>, and <b>DevOps and production operations</b>. 8+ years shipping mobile, web, ERP and SaaS platforms for clients in Egypt, Saudi Arabia, the UAE, Libya and Spain.</p>
+      <div class="cta">
+        <a class="btn" href="#work">Explore projects</a>
+        <a class="btn ghost" id="mail" href="#">Contact me</a>
+        <a class="btn ghost" id="li" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-photo reveal">
+      <div class="ring"></div>
+      <img src="assets/omar.jpg" alt="Omar Ahmed Amin">
+      <div class="badge b1">CTO · CodeWealth</div>
+      <div class="badge b2">DevOps · Docker · Linux</div>
+      <div class="badge b3">Flutter · Node · Python · PHP</div>
+    </div>
+  </section>
+
+  <section class="stats reveal" id="stats"></section>
+
+  <section class="marquee" aria-hidden="true"><div class="track" id="marquee"></div></section>
+
+  <section id="work" class="section">
+    <div class="head reveal">
+      <p class="eyebrow">Selected work</p>
+      <h2>Projects I led, built & deployed</h2>
+      <p class="muted">Open any project for screenshots, scope, my role, responsibilities and stack. Each project has its own shareable link.</p>
+    </div>
+    <div class="filters reveal" id="filters"></div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="head reveal"><p class="eyebrow">Career</p><h2>Experience</h2></div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="head reveal"><p class="eyebrow">Toolbox</p><h2>Skills & technologies</h2></div>
+    <div class="skills" id="skillgrid"></div>
+  </section>
+
+  <section id="devops" class="section">
+    <div class="head reveal"><p class="eyebrow">Operations</p><h2>How I run production</h2></div>
+    <div class="ops">
+      <div class="op reveal"><b>01</b><h3>Containerize & deploy</h3><p>I package every service in Docker and deploy CodeWealth projects to production servers with repeatable releases.</p></div>
+      <div class="op reveal"><b>02</b><h3>Monitor health</h3><p>Status checks and health scripts watch uptime, resources and services on every server.</p></div>
+      <div class="op reveal"><b>03</b><h3>Secure</h3><p>Firewall rules, blocking abusive IPs, access control and regular security reviews.</p></div>
+      <div class="op reveal"><b>04</b><h3>Self-heal</h3><p>Recovery scripts bring services back automatically after downtime, such as payment delays or provider infrastructure updates.</p></div>
+    </div>
+  </section>
+
+  <section id="earlier" class="section">
+    <div class="head reveal"><p class="eyebrow">Archive</p><h2>Earlier projects (2018 — 2025)</h2></div>
+    <div class="archive" id="archive"></div>
+  </section>
+
+  <section class="section contact reveal">
+    <h2>Let's build something significant.</h2>
+    <p class="muted" id="contactline"></p>
+    <div class="cta center"><a class="btn" id="mail2" href="#">Email me</a><a class="btn ghost" href="Omar_Ahmed_Amin_CV_2026.pdf" download>Download CV (PDF)</a></div>
+  </section>
+</main>
+
+<footer>© <span id="yr"></span> Omar Ahmed Amin · Giza, Egypt</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="close" id="close" aria-label="Close">×</button>
+    <div id="m-body"></div>
+  </div>
+</div>
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
