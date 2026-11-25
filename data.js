@@ -1,7 +1,7 @@
 window.PROFILE = {
   name: { en: "Omar Ahmed Amin", ar: "عمر أحمد أمين" },
   email: "omaraminwork@gmail.com",
-  phone: "+20067300073",
+  phone: "+201067300073",
   linkedin: "https://www.linkedin.com/in/omar-amin-36a6a71aa",
   stats: [
     { value: 250, suffix: "+", en: "software projects delivered", ar: "مشروع برمجي منفّذ" },
